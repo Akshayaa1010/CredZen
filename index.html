@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CredZen</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h2 class="logo">CredZen</h2>
+    <ul class="menu">
+      <li onclick="showSection('dashboard')">🏠 Dashboard</li>
+      <li onclick="showSection('learn')">📘 Learn</li>
+      <li onclick="showSection('usage')">📊 Usage</li>
+      <li onclick="showSection('smart')">💡 Smart Picks</li>
+    </ul>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- HEADER -->
+    <header class="header">
+      <h1>CredZen</h1>
+      <div class="profile" onclick="toggleDropdown()">👤
+        <div class="dropdown" id="profileDropdown">
+          <div>👛 Wallet</div>
+          <div>➕ Add Card</div>
+          <div>⚙️ Settings</div>
+          <div class="logout">🚪 Logout</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="section active">
+      <h1 class="title">CredZen</h1>
+      <p class="subtitle">
+        Learn. Track. Optimize.  
+        Master credit cards the smart way.
+      </p>
+    </section>
+
+    <!-- LEARN -->
+    <section id="learn" class="section">
+      <h2>📘 Credit Learning Path</h2>
+      <div id="lessonList"></div>
+      <div id="lessonBox"></div>
+    </section>
+
+    <!-- USAGE -->
+    <section id="usage" class="section">
+  <h2>📊 Usage Tracker</h2>
+
+  <label>Credit Limit (₹)</label><br>
+  <input type="number" id="creditLimit"><br><br>
+
+  <label>Current Spend (₹)</label><br>
+  <input type="number" id="currentSpend"><br><br>
+
+  <button onclick="calculateUsage()">Check Usage</button>
+
+  <p id="usageResult"></p>
+</section>
+
+
+    <!-- SMART PICKS -->
+    <section id="smart" class="section">
+  <h2>💡 Smart Picks</h2>
+
+  <label>What do you spend most on?</label><br><br>
+
+  <select id="spendType">
+    <option value="">Select</option>
+    <option value="travel">Travel ✈️</option>
+    <option value="shopping">Shopping 🛍️</option>
+    <option value="fuel">Fuel ⛽</option>
+    <option value="bills">Bills 📱</option>
+  </select>
+
+  <br><br>
+  <button onclick="recommendCard()">Get Recommendation</button>
+
+  <p id="cardResult"></p>
+</section>
+
+
+  </div>
+</div>
+
+<script src="js/navigation.js"></script>
+<script src="js/learn.js"></script>
+<script src="js/usage.js"></script>
+
+
+</body>
+</html>
+
+
+
+
+
